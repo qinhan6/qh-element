@@ -1,1 +1,67 @@
 @import url("./reset.css");
+
+:root {
+  /* colors */
+  --qh-color-white: #ffffff;
+  --qh-color-black: #000000;
+  --colors: (primary: #409eff, success: #67c23a, warning: #e6a23c, danger: #f56c6c, info: #909399);
+  --qh-bg-color: #ffffff;
+  --qh-bg-color-page: #f2f3f5;
+  --qh-bg-color-overlay: #ffffff;
+  --qh-text-color-primary: #303133;
+  --qh-text-color-regular: #606266;
+  --qh-text-color-secondary: #909399;
+  --qh-text-color-placeholder: #a8abb2;
+  --qh-text-color-disabled: #c0c4cc;
+  --qh-border-color: #dcdfe6;
+  --qh-border-color-light: #e4e7ed;
+  --qh-border-color-lighter: #ebeef5;
+  --qh-border-color-extra-light: #f2f6fc;
+  --qh-border-color-dark: #d4d7de;
+  --qh-border-color-darker: #cdd0d6;
+  --qh-fill-color: #f0f2f5;
+  --qh-fill-color-light: #f5f7fa;
+  --qh-fill-color-lighter: #fafafa;
+  --qh-fill-color-extra-light: #fafcff;
+  --qh-fill-color-dark: #ebedf0;
+  --qh-fill-color-darker: #e6e8eb;
+  --qh-fill-color-blank: #ffffff;
+  
+  @each $val, $color in var(--colors) {
+    --qh-color-$(val): $(color);
+    @for $i from 3 to 9 {
+      --qh-color-$(val)-light-$(i): mix(#fff, $(color), 0.$(i));
+    }
+    --qh-color-$(val)-dark-2: mix(#000, $(color), 0.2);
+  }
+
+  /* border */
+  --qh-border-width: 1px;
+  --qh-border-style: solid;
+  --qh-border-color-hover: var(--qh-text-color-disabled);
+  --qh-border: var(--qh-border-width) var(--qh-border-style) var(--qh-border-color);
+  --qh-border-radius-base: 4px;
+  --qh-border-radius-small: 2px;
+  --qh-border-radius-round: 20px;
+  --qh-border-radius-circle: 100%;
+
+  /*font*/
+  --qh-font-size-extra-large: 20px;
+  --qh-font-size-large: 18px;
+  --qh-font-size-medium: 16px;
+  --qh-font-size-base: 14px;
+  --qh-font-size-small: 13px;
+  --qh-font-size-extra-small: 12px;
+  --qh-font-family: 'Helvetica Neue', Helvetica, 'PingFang SC', 'Hiragino Sans GB',
+    'Microsoft YaHei', '\5fae\8f6f\96c5\9ed1', Arial, sans-serif;
+  --qh-font-weight-primary: 500;
+
+  /*disabled*/
+  --qh-disabled-bg-color: var(--qh-fill-color-light);
+  --qh-disabled-text-color: var(--qh-text-color-placeholder);
+  --qh-disabled-border-color: var(--qh-border-color-light);
+
+  /*animation*/
+  --qh-transition-duration: 0.4s;
+  --qh-transition-duration-fast: 0.2s;
+}

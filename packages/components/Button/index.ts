@@ -1,4 +1,10 @@
-import Button from "./Button.vue";
-import { withInstall } from '@my-element/utils';
+import QhButton from "./Button.vue";
+import type { App } from 'vue';
 
-export const QhButton = withInstall(Button);
+QhButton.install = (app: App) => {
+  app.component(QhButton.name!, QhButton);
+};
+
+export { QhButton }
+
+export * from './type';

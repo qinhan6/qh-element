@@ -1,8 +1,10 @@
-import { makeInstaller } from '@my-element/utils';
-import components from './components';
-import '@my-element/theme/index.css'
+import { QhButton } from "@my-element/components";
+import { makeInstaller } from "@my-element/utils";
 
-const installer = makeInstaller(components);
+import "@my-element/theme/index.css";
 
-export * from './components';
-export default installer;
+const components = [QhButton] as any[];
+
+export { QhButton }
+
+export default makeInstaller(components);

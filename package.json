@@ -5,10 +5,11 @@
   "main": "index.js",
   "scripts": {
     "dev": "pnpm --filter @my-element/play dev",
+    "story": "pnpm --filter @my-element/play storybook",
     "docs:dev": "pnpm --filter @my-element/docs dev",
     "docs:build": "pnpm --filter @my-element/docs build",
     "docs:preview": "pnpm --filter @my-element/docs preview",
-    "test": "echo 'todo'"
+    "test": "pnpm --filter @my-element/components test"
   },
   "keywords": [],
   "author": "",
